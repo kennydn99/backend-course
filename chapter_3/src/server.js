@@ -19,7 +19,7 @@ app.use(express.json());
 // Any requests for css files will be resoved to public dir
 app.use(express.static(path.join(__dirname, "../public")));
 
-// Serve up HTML file from /publilc dir
+// Serve up HTML file from /public dir
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });

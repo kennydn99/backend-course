@@ -5,7 +5,15 @@ import db from "../db.js";
 
 const router = express.Router();
 
-router.post("/register", (req, res) => {});
+// Register new user endpoint /auth/register
+router.post("/register", (req, res) => {
+  const { username, password } = req.body;
+  // encrypt pwd
+  const hashPassword = bcrypt.hashSync(password, 8);
+
+  console.log(hashPassword);
+  res.sendStatus(201);
+});
 
 router.post("/login", (req, res) => {});
 
